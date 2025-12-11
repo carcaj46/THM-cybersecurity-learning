@@ -1,0 +1,196 @@
+PT 1:
+
+Command/Description
+-------------------
+echo	Output any text that we provide
+whoami	Find out what user we're currently logged in as!
+
+
+ls	listing
+cd	change directory
+cat	concatenate, display content of file
+pwd	print working directory
+find 	syntax, -name passwords.txt 	//specific
+		-name *.txt		//any file of type
+grep 	search the contents in files	syntax, grep "81.143.211.90" access.log
+wc	count number of entries
+
+
+Shell Operators
+---------------
+
+Symbol Operator/Description
+---------------------------
+
+&		This operator allows you to run commands in the background of your terminal.
+&&		This operator allows you to combine multiple commands together in one line of your terminal.
+>		This operator is a redirector - meaning that we can take the output from a command (such as using cat to output a file) and direct it elsewhere.
+>>		This operator does the same function of the > operator but appends the output rather than replacing (meaning nothing is overwritten).
+
+
+
+PT 2:
+
+Secure Shell or SSH simply is a protocol between devices in an encrypted form.
+
+e.g., 	ssh tryhackme@10.80.164.116
+
+Flags and Switches
+------------------
+
+//Using our ls example, ls informs us that there is only one folder named "folder1" as highlighted in the screenshot below. Note that the contents in the screenshots below are only examples.
+//However, after using the -a argument (short for --all), we now suddenly have an output with a few more files and folders such as ".hiddenfolder". Files and folders with "." are hidden files.
+
+
+--help	This option will list the possible options that the command accepts
+
+
+!! https://linux.die.net/man/ !! Linux manual
+
+man 	To access this documentation e.g., //tryhackme@linux2:~$ man ls\
+
+
+Command	Full Name	Purpose
+-------------------------------
+
+touch	touch		Create file
+mkdir	make directory	Create a folder
+cp	copy		Copy a file or folder
+mv	move		Move a file or folder
+rm	remove		Remove a file or folder
+file	file		Determine the type of a file
+
+
+Permissions
+-----------
+
+//Permissions can be so granular, that whilst a user technically owns a file, if the permissions have been set, then a group of users can also have either the same or a different set of permissions to the exact same file without affecting the file owner itself.
+
+
+su	switch user
+-l	--login, switch
+
+
+e.g., 	ls -l /path/to/file
+
+
+THM e.g.
+--------
+
+Using su to switch to user2 interactively:
+
+tryhackme@linux2:~$ su user2
+Password:
+user2@linux2:/home/tryhackme$
+For example, when using su to switch to "user2", our new session drops us into our previous user's home directory. 
+
+Using su to switch to user2 interactively:
+
+tryhackme@linux2:~$ su -l user2
+Password:
+user2@linux2:~$ pwd
+user2@:/home/user2$
+
+Where now, after using -l, our new session has dropped us into the home directory of "user" automatically. 
+
+
+Common Directories
+------------------
+
+/etc	etcetc			location to store system files used by os
+/var	variable data		root folders on Linux install 
+/root	root for system user	user would have their data in a directory such as "/home/root" by default.  
+/tmp	temporary		stores volatile data
+
+
+
+PT 3
+
+
+Terminal Text Editors
+---------------------
+
+nano	replacing file name with selected
+
+
+General Utilities
+-----------------
+
+wget	download e.g. wget https://assets.tryhackme.com/additional/linux-fundamentals/part3/myfile.txt
+curl 	
+
+
+SCP (SSH) - transfer files from host, secure copy
+
+
+Variable							Value
+--------							-----
+The IP address of the remote system 				192.168.1.30
+User on the remote system					ubuntu
+Name of the file on the local system				important.txt
+Name that we wish to store the file as on the remote system	transferred.txt
+
+
+Processes
+---------
+
+Command
+-------
+
+ps 		list of running processes (user/system processes)
+ps aux		list of processes (other users/not run from a session)
+top
+kill		e.g. kill 1337 (PID, process ID)
+
+SIGTERM		Kill the process, but allow it to do some cleanup tasks beforehand
+SIGKILL		Kill the process - doesn't do any cleanup after the fact
+SIGSTOP		Stop/suspend a process
+	
+*system - look up
+
+systemctl 			allows to interact with system process/deamon
+systemctl [option] [service] 	, formatting
+
+Actions in systemctl:
+
+start
+stop
+enable
+disable
+
+
+fg 	bring to foreground
+
+
+Automation
+----------
+
+
+cron		cron jobs
+crontabs	cron jobs manager, special file with formatting that is recognised by the cron process to execute each line step-by-step
+
+crontab -e	edit crontabs
+ctrl-z		exit crontab editor
+
+crontabs values
+-------- ------
+
+MIN	What minute to execute at
+HOUR	What hour to execute at
+DOM	What day of the month to execute at
+MON	What month of the year to execute at
+DOW	What day of the week to execute at
+CMD	The actual command that will be executed.
+
+* asterisk if not wish to provide a value
+
+//https://crontab-generator.org/
+//https://crontab.guru/
+
+
+
+
+
+
+
+

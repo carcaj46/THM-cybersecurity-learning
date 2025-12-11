@@ -1,4 +1,7 @@
 Bash Scripting
+
+COMPLETED: https://tryhackme.com/room/bashscripting?utm_campaign=social_share&utm_medium=social&utm_content=room&utm_source=copy&sharerId=68b8b02cd9771fb547c8fde6
+
 (Bourne-Again SHell)
 
 

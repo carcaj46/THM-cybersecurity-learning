@@ -1,6 +1,12 @@
-Windows Fundamentals 1:
+Cyber Security 101:
 
+Windows Fundamentals 1:
 -----------------------
+
+
+Part 1 Completed: https://tryhackme.com/room/windowsfundamentals1xbx?utm_campaign=social_share&utm_medium=social&utm_content=room&utm_source=copy&sharerId=68b8b02cd9771fb547c8fde6
+
+
 
 New Technology File System or simply - NTFS
 -------------------------------------------

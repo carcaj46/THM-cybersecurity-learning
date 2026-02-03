@@ -15,6 +15,13 @@ NTFS is known as a journaling file system. In case of a failure, the file system
 
 Before NTFS, there was FAT16/FAT32 (File Allocation Table) and HPFS (High Performance File System)
 
+
+
+-------------->> https://learn.microsoft.com/en-us/troubleshoot/windows-client/backup-and-storage/fat-hpfs-and-ntfs-file-systems
+		 https://www.howtogeek.com/346997/what-is-the-system32-directory-and-why-you-shouldnt-delete-it/
+
+
+
 NTFS addresses many of the limitations of the previous file systems; such as: 
 
 -Supports files larger than 4GB
@@ -54,6 +61,9 @@ Full Control		Permits reading, writing, changing, and deleting of 			Permits rea
 
 
 
+ https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/bb727008(v=technet.10)?redirectedfrom=MSDN
+
+
 
 SYSTEM32 FOLDERS
 ----------------
@@ -88,14 +98,18 @@ TASK MANAGER
 The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under Performance. 
 
 
+-------------->> https://www.howtogeek.com/405806/windows-task-manager-the-complete-guide/
+
+
 
 =======================
 Windows Fundamentals 2:
 -----------------------
 
 
-SYSTEM CONFIGURATION		///!!!!!!!!!!!!!!!!
---------------------
+=======================
+2. SYSTEM CONFIGURATION		///!!!!!!!!!!!!!!!!
+-----------------------
 
 msconfig	System Configuration	-GENERAL tab, we can select what devices and services for Windows to load upon boot.
 					-BOOT tab, we can define various boot options for the Operating System.
@@ -114,26 +128,27 @@ Windows uses a page file as an extra virtual memory space when the physical RAM 
 
 In this Performance tab, the Advanced option can also tell you about the page file size configured for the drives. In this case, it's 1048 MB. The other settings here can give you the following information:
 
--The drive where the page file is stored
--The initial size (MB)
--The maximum size
--Whether Windows manages the size automatically
+-The drive where the page file is stored.
+-The initial size (MB).
+-The maximum size.
+-Whether Windows manages the size automatically.
 
 
 Under the Startup and Recovery section, different settings for the startup and recovery. The Write debugging information dropdown tells you the type of crash dump configured for the system. Windows supports different dump types, such as:
 
--Automatic memory dump
--Kernel memory dump
--Small memory dump (256 KB)
--Complete memory dump
--None
+-Automatic memory dump.
+-Kernel memory dump.
+-Small memory dump (256 KB).
+-Complete memory dump.
+-None.
 
 This setting shows how much information Windows will save in the crash dump when a system crash occurs.
 
 
 
-MORE ACCOUNT USER SETTINGS
---------------------------
+======================
+3. CHANGE UAC SETTINGS
+----------------------
 
 
 UAC settings can be changed to change some of its security settings:
@@ -149,11 +164,12 @@ UAC settings can be changed to change some of its security settings:
 
 
 
-COMPUTER MANAGEMENT
--------------------
+======================
+4. COMPUTER MANAGEMENT		///!!!!!!!!!!!!!!!! MUST IMPORTANT
+----------------------
 
 
-compmgmt	:has 3 primary sections:	///!!!!!!!!!!!!!!!!		
+compmgmt	:has 3 primary sections:			
 
 		-SYSTEM TOOLS
 		-STORAGE
@@ -219,35 +235,84 @@ CUSTOMLOG			Contains events logged by applications that create a custom log.
 				without affecting other applications.
 
 
------------------->> https://tryhackme.com/room/windowseventlogs
+
+-------------->> https://learn.microsoft.com/en-us/windows/win32/eventlog/eventlog-key
+-------------->> https://tryhackme.com/room/windowseventlogs
 
 
 Shared Folders: complete list of shares and folders shared that others can connect to.
 
 
+In Local Users and Groups (lusrmgr.msc) you'll see:
+
+perfmon		-you'll see a utility called Performance Monitor
+
+
+devmgmt.msc	-Device Manager, allows us to view and configure the hardware, such as disabling any hardware attached to the computer.
 
 
 
+Storage:
+--------
+
+
+diskmgmt.msc 	-Disk Management, is a system utility in Windows that enables you to perform advanced storage tasks.  Some tasks are:
+
+-Set up a new drive.
+-Extend a partition.
+-Shrink a partition.
+-Assign or change a drive letter (ex. E:).
 
 
 
+Services and Applications
+-------------------------
+
+
+You can see all the services and their statuses by clicking the Services button given under the Services and Applications section.
+The services shown above have their display names, status, and other values. If you want to get more information about any service, right-click on the service and click PROPERTIES.
+
+
+There is a field known as Startup type in a service’s Properties window. It determines how and when the service is configured to start.
+
+-AUTOMATIC
+-MANUAL
+-DISABLED
+
+
+WMI Control configures and controls the Windows Management Instrumentation (WMI) service.
 
 
 
+=====================
+5. SYSTEM INFORMATION
+---------------------
+
+
+msinfo32	- System Information tool
+
+Per Microsoft, "Windows includes a tool called Microsoft System Information (Msinfo32.exe).  This tool gathers information about your computer and displays a comprehensive view of your hardware, system components, and software environment, which you can use to diagnose computer issues."
+
+
+The information in System Summary is divided into three sections:
+
+-HARDWARE RESOURCES
+-COMPONENTS
+-SOFTWARE ENVIRONMENT 
+
+It'll display general technical specifications for the computer, such as processor brand and model.
 
 
 
+===================
+6. RESOURCE MONITOR
+-------------------
 
-
-
-
-
-
-
-
-
-
-
+resmon		-Per Microsoft, "Resource Monitor displays per-process and aggregate CPU, memory, disk, and network usage information,
+		 in addition to providing details about which processes are using individual file handles and modules. Advanced 		 filtering allows users to isolate the data related to one or more processes (either applications or services), 
+		 start, stop, pause, and resume services, and close unresponsive applications from the user interface. 
+		 It also includes a process analysis feature that can help identify deadlocked processes 
+		 and file locking conflicts so that the user can attempt to resolve the conflict instead of closing an application and 		 potentially losing data."
 
 
 

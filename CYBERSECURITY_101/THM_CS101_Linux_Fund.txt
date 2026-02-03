@@ -1,6 +1,8 @@
 Cyber Security 101:
 
+===================
 Linux Fundamentals:
+-------------------
 
 PT 1 COMPLETED: https://tryhackme.com/room/linuxfundamentalspart1?utm_campaign=social_share&utm_medium=social&utm_content=share-completed-room&utm_source=copy&sharerId=68b8b02cd9771fb547c8fde6
 
@@ -9,7 +11,9 @@ PT 2 COMPLETED: https://tryhackme.com/room/linuxfundamentalspart2?utm_campaign=s
 PT 3 COMPLETED: https://tryhackme.com/room/linuxfundamentalspart3?utm_campaign=social_share&utm_medium=social&utm_content=room&utm_source=copy&sharerId=68b8b02cd9771fb547c8fde6
 
 
+=====
 PT 1:
+-----
 
 Command/Description
 -------------------
@@ -40,7 +44,10 @@ Symbol Operator/Description
 
 
 
+=====
 PT 2:
+-----
+
 
 Secure Shell or SSH simply is a protocol between devices in an encrypted form.
 
@@ -114,8 +121,9 @@ Common Directories
 /tmp	temporary		stores volatile data
 
 
-
+=====
 PT 3:
+-----
 
 
 Terminal Text Editors

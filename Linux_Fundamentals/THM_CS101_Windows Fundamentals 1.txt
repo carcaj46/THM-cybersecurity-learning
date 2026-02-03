@@ -1,11 +1,11 @@
 Cyber Security 101:
 
+=======================
 Windows Fundamentals 1:
 -----------------------
 
 
 Part 1 Completed: https://tryhackme.com/room/windowsfundamentals1xbx?utm_campaign=social_share&utm_medium=social&utm_content=room&utm_source=copy&sharerId=68b8b02cd9771fb547c8fde6
-
 
 
 New Technology File System or simply - NTFS
@@ -69,9 +69,7 @@ USER ACCOUNTS
 -------------
 
 
-Local User and Group Management. 
-
-Right-click on the Start Menu and click Run. Type lusrmgr.msc.
+lusrmgr.msc 	-Local User and Group Management. cmd + R and type lusrmgr.msc.		///!!!!!!!!!!!!!!!!
 
 
 
@@ -79,7 +77,7 @@ UAC - USER ACCOUNT CONTROL
 --------------------------
 
 
-Usually logged a Local Admin to prevent risk of compromise, 
+Usually logged a Local Admin to prevent risk of compromise.
 
 
 
@@ -88,3 +86,178 @@ TASK MANAGER
 
 
 The Task Manager provides information about the applications and processes currently running on the system. Other information is also available, such as how much CPU and RAM are being utilized, which falls under Performance. 
+
+
+
+=======================
+Windows Fundamentals 2:
+-----------------------
+
+
+SYSTEM CONFIGURATION		///!!!!!!!!!!!!!!!!
+--------------------
+
+msconfig	System Configuration	-GENERAL tab, we can select what devices and services for Windows to load upon boot.
+					-BOOT tab, we can define various boot options for the Operating System.
+					-SEVICES tab, lists all services configured for the system regardless of their state (running or 						 			 stopped).
+					-STARTUP tab, you won't see anything interesting in the attached VM.
+					-TOOLS tab, there is a list of various utilities (tools) in the Tools tab here that we can run to 						 			 configure the operating system further. There is a brief description of each tool to provide some 									 insight into what the tool is for. (!!THIS IS PRETTY IMPORTANT!!)
+
+taskmgr		Task Manager 
+
+
+
+ADVANCED SYSTEM SETTINGS
+------------------------
+
+Windows uses a page file as an extra virtual memory space when the physical RAM becomes full. This helps to prevent slowdowns or application crashes when the system runs out of memory. You can view or modify the page file by navigating to the Advanced option at the top and clicking Settings under the Performance tab.
+
+In this Performance tab, the Advanced option can also tell you about the page file size configured for the drives. In this case, it's 1048 MB. The other settings here can give you the following information:
+
+-The drive where the page file is stored
+-The initial size (MB)
+-The maximum size
+-Whether Windows manages the size automatically
+
+
+Under the Startup and Recovery section, different settings for the startup and recovery. The Write debugging information dropdown tells you the type of crash dump configured for the system. Windows supports different dump types, such as:
+
+-Automatic memory dump
+-Kernel memory dump
+-Small memory dump (256 KB)
+-Complete memory dump
+-None
+
+This setting shows how much information Windows will save in the crash dump when a system crash occurs.
+
+
+
+MORE ACCOUNT USER SETTINGS
+--------------------------
+
+
+UAC settings can be changed to change some of its security settings:
+
+
+-ALWAYS NOTIFY: This is the highest security. Windows notifies you whenever any apps or you yourself try to make changes, and the desktop dims (Secure Desktop).
+
+-NOTIFY FOR APPS: Windows notifies only when apps try to make changes, but not when you change Windows settings. This option is enabled by default.
+
+-NOTIFY WITHOUT DIMMING: Same as above (Notify for apps), but this time the screen does not dim. 
+
+-NEVER NOTIFY: Notifications are turned off. Windows won’t warn you about any changes made by you or any apps. 
+
+
+
+COMPUTER MANAGEMENT
+-------------------
+
+
+compmgmt	:has 3 primary sections:	///!!!!!!!!!!!!!!!!		
+
+		-SYSTEM TOOLS
+		-STORAGE
+		-SERVICES AND APPLICATIONS
+
+
+System Tools:
+-------------
+
+-TASK SCHEDULER: with Task Scheduler, we can create and manage common tasks that our computer will carry out automatically at the times we specify.
+
+-TASK SCHEDULER LIBRARY: to view all scheduled tasks.	-ACTIONS --->CREATE BASIC TASK: 
+
+-EVENT VIEWER: has 3 panes
+		-The pane on the left provides a hierarchical tree listing of the event log providers. (as shown in the image above)
+		-The pane in the middle will display a general overview and summary of the events specific to a selected provider.
+		-The pane on the right is the actions pane.
+
+
+There are 5 types of events that can be logged:
+
+
+EVENT TYPE			DESCRIPTION
+----------                      -----------
+
+ERROR				An event that indicates a significant problem such as loss of data or loss of functionality. 
+				For example, if a service fails to load during start-up, an Error event is logged.
+
+WARNING				An event that is not necessarily significant, but may indicate a possible future problem. 
+				For example, when disk space is low, a Warning event is logged. 
+				If an application can recover from an event without loss of functionality or data, 
+				it can generally classify the event as a Warning event.
+
+INFORMATION			An event that describes the successful operation of an application, driver, or service. 
+				For example, when a network driver loads successfully, it may be appropriate to log an Information event. 
+				Note that it is generally inappropriate for a desktop application to log an event each time it starts.
+
+SUCCESS AUDIT			An event that records an audited security access attempt that is successful. 
+				For example, a user's successful attempt to log on to the system is logged as a Success Audit event.
+
+FAILURE AUDIT			An event that records an audited security access attempt that fails. 
+				For example, if a user tries to access a network drive and fails, the attempt is logged as a Failure Audit event.
+
+
+The standard LOGS are visible under Windows Logs:
+
+
+LOG				DESCRIPTION
+---				-----------
+
+APPLICATION			Contains events logged by applications. 
+				For example, a database application might record a file error. 
+				The application developer decides which events to record.
+
+SECURITY			Contains events such as valid and invalid logon attempts, 
+				as well as events related to resource use such as creating, opening, or deleting files or other objects. 
+				An administrator can start auditing to record events in the security log.
+
+SYSTEM				Contains events logged by system components, such as the failure of a driver or other system component to load during startup.
+
+CUSTOMLOG			Contains events logged by applications that create a custom log. 
+				Using a custom log enables an application to control the size of the log or attach ACLs for security purposes 
+				without affecting other applications.
+
+
+------------------>> https://tryhackme.com/room/windowseventlogs
+
+
+Shared Folders: complete list of shares and folders shared that others can connect to.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
